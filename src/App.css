@@ -13,7 +13,7 @@ button, input:focus {
 }
 
 .App-header {
-    background-color: #282c34;
+    background-color: #49505d;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,20 @@ button, input:focus {
     flex-direction: row;
 }
 .num_button {
-    border: none;
     background: inherit;
     color: white;
+}
+.num_button:hover {
+    cursor: pointer;
+    background: #398ff2;
+}
+.niceBtn {
+    border: none;
+    background: #398ff2;
+    color: white;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.niceBtn:hover {
+    background: #224a81;
 }
