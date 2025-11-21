@@ -48,6 +48,7 @@ button, input:focus {
     border: none;
     background: #398ff2;
     color: white;
+    margin-top: 10px;
     margin-bottom: 5px;
     padding: 5px;
 }

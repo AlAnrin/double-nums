@@ -14,6 +14,7 @@ class App extends Component {
             row: 4,
             col: 8,
             now: -1,
+            index: 0,
             select: 20,
             canSelect: [10, 15, 20, 25, 30],
             win: false
@@ -72,7 +73,7 @@ class App extends Component {
                         let newBoard = this.state.board;
                         newBoard[index].isVisible = false;
                         newBoard[this.state.now].isVisible = false;
-                        this.setState({now: -1});
+                        this.setState({now: -1, index: this.state.index + 1});
                         this.setNewBoard(newBoard);
                     }, 200);
                 }
@@ -106,11 +107,11 @@ class App extends Component {
         }
         let board = [];
         this.changeBoard(select, board);
-        this.setState({board: board, select: select, row: row, col: col});
+        this.setState({board: board, select: select, row: row, col: col, index: 0});
     }
 
     playAgain = () => {
-        this.setState({win: false});
+        this.setState({win: false, index: 0});
         this.handleSelect(20);
     };
 
@@ -140,6 +141,9 @@ class App extends Component {
                     this.state.win ?
                         <header className="App-header">
                             <h1>YOU WIN</h1>
+                            <div>
+                                Count of misclicks: {this.state.index}
+                            </div>
                             <button className="niceBtn" onClick={this.playAgain}>play again?</button>
                         </header>
                         :
